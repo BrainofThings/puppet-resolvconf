@@ -30,9 +30,10 @@ define resolvconf::file (
   $options    = [],
 ) {
 
-  if $domain != '' and $search != [] {
-    fail('The "domain" and "search" parameters are mutually exclusive.')
-  }
+  # No, it's not.
+  #if $domain != '' and $search != [] {
+  #  fail('The "domain" and "search" parameters are mutually exclusive.')
+  #}
 
   if $nameserver != [] {
     file { $title:
